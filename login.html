@@ -31,11 +31,26 @@
         <label for="password">Password</label>
         <input type="password" id="password" placeholder="Enter your password" />
       </div>
-      <a href="studenthome.html" class="btn-login">Login</a>
+      <a href="#" class="btn-login">Login</a>
       <p class="note">
         <a href="#">Forgot password?</a>
       </p>
     </div>
   </div>
+  <script>
+    document.querySelector('.btn-login').addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const studentId = document.getElementById('student-id').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        if (!studentId || !password) {
+            alert('Please enter both your Student ID and password.');
+            return;
+        }
+
+        window.location.href = 'studenthome.html';
+    });
+</script>
 </body>
 </html>
