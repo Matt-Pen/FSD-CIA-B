@@ -1,0 +1,494 @@
+:root {
+    --navy: #0f1e38;
+    --navy2: #162444;
+    --navy3: #1e2f52;
+    --amber: #e8a020;
+    --amber2: #f5b942;
+    --muted: #8a95a8;
+    --white: #ffffff;
+    --border: #2a3a58;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+}
+
+/* NAV */
+nav {
+    background: var(--amber);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 60px;
+    width: 100%;
+}
+
+.nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.0rem;
+    color: var(--navy2);
+}
+
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.875rem;
+}
+
+.nav-right a {
+    color: var(--navy3);
+    text-decoration: none;
+}
+
+.nav-right a:hover {
+    color: wheat;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--navy2);
+    color: var(--amber);
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MAIN CONTENT */
+
+/* Container styling */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px auto;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.toggle-label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--muted);
+    transition: color 0.3s ease;
+}
+
+
+
+/* The Switch Wrapper */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default checkbox */
+.toggle-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The Slider background */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--navy3);
+    transition: .4s;
+    border-radius: 35px;
+    border: 1px solid var(--border);
+}
+
+/* The round knob inside the slider */
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--amber);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+
+/* When checked: change background and move knob slowly */
+.toggle-checkbox:checked~.switch .slider {
+    transition: .6s;
+    background-color: var(--amber2);
+}
+
+.toggle-checkbox:checked~.switch .slider::before {
+    transition: .6s;
+    transform: translateX(26px);
+    background-color: var(--navy);
+}
+
+/* When unchecked: move the slider back to its default but slowly*/
+.toggle-checkbox:not(:checked)~.switch .slider {
+    transition: .6s;
+
+}
+
+.toggle-checkbox:not(:checked)~.switch .slider::before {
+    transition: .6s;
+}
+
+.toggle-checkbox:not(:checked)~.class-viewer {
+    color: white
+}
+
+.toggle-checkbox:checked~.class-participant {
+    color: white;
+}
+
+
+
+/* MAIN GRID */
+
+.page-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* EVENT CARD */
+.event-card {
+    background: var(--navy2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px;
+    position: sticky;
+    top: 20px;
+}
+
+.event-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.fest-name {
+    font-size: 0.8rem;
+    color: var(--amber);
+    font-weight: 600;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.event-detail-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+
+.detail-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.detail-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.event-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 18px 0;
+}
+
+.event-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.seats-left {
+    margin-top: 18px;
+    background: var(--navy3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    color: var(--amber2);
+    font-weight: 600;
+}
+
+.seats-left span {
+    color: var(--muted);
+    font-weight: 400;
+}
+
+/* FORM CARD */
+.form-container {
+    background: var(--navy2);
+    border: 1px solid var(--border);
+    padding: 28px;
+    border-radius: 6px;
+}
+
+.form-container h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* FIELDS */
+.fields-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 14px;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.input-group input,
+.input-group select {
+    background: var(--navy3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 9px 12px;
+    color: var(--white);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--amber);
+}
+
+.input-group input::placeholder {
+    color: var(--muted);
+    opacity: 0.7;
+}
+
+.input-group select option {
+    background: var(--navy3);
+}
+
+.input-group.error input,
+.input-group.error select {
+    border-color: var(--error);
+}
+
+.error-msg {
+    font-size: 0.75rem;
+    color: var(--error);
+    margin-top: 3px;
+    display: none;
+}
+
+.input-group.error .error-msg {
+    display: block;
+}
+
+/* SECTION LABEL */
+.section-sep {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--amber);
+    margin: 6px 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+/* TEAM TOGGLE */
+.team-toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.team-toggle-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.switch-sm {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+}
+
+.team-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-sm {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--navy3);
+    border-radius: 26px;
+    border: 1px solid var(--border);
+    transition: .4s;
+}
+
+.slider-sm::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: var(--amber);
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.team-checkbox:checked~.switch-sm .slider-sm {
+    background: var(--amber2);
+}
+
+.team-checkbox:checked~.switch-sm .slider-sm::before {
+    transform: translateX(22px);
+    background: var(--navy);
+}
+
+/* TEAMMATE BLOCK */
+.teammate-block {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.team-fields {
+    display: none;
+    margin-top: 4px;
+}
+
+.team-fields.show {
+    display: block;
+}
+
+/* SUBMIT */
+.submit-btn {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    background: var(--amber);
+    color: var(--navy);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background: var(--amber2);
+}
+
+@media (max-width: 700px) {
+    .page-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .event-card {
+        position: static;
+    }
+
+    .fields-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (700px < width < 1200px) {
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

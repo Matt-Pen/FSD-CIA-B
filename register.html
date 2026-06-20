@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+3:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="CSS\register.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">EventHub</div>
+        <div class="nav-right">
+            <a href="login.html">Logout</a>
+            <a href="profile.html">
+                <div class="avatar">ME</div>
+            </a>
+        </div>
+    </nav>
+
+    <section>
+        <div class="toggle-container">
+            <input type="checkbox" id="role-toggle" class="toggle-checkbox">
+            <span class="toggle-label class-viewer">Viewer</span>
+            <label for="role-toggle" class="switch">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label class-participant">Participant</span>
+        </div>
+
+        <main>
+            <div class="page-grid">
+
+                <!-- EVENT DETAILS CARD -->
+                <aside class="event-card">
+                    <h2>Code Sprint 2025</h2>
+                    <div class="fest-name">Gateways 2026 · CS Department</div>
+                    <div class="event-details">
+                        <div class="event-detail-item">
+                            <div class="detail-text">
+                                <span class="detail-label">Date</span>
+                                <span class="detail-value">March 14, 2025</span>
+                            </div>
+                        </div>
+                        <div class="event-detail-item">
+                            <div class="detail-text">
+                                <span class="detail-label">Time</span>
+                                <span class="detail-value">10:00 AM – 4:00 PM</span>
+                            </div>
+                        </div>
+                        <div class="event-detail-item">
+                            <div class="detail-text">
+                                <span class="detail-label">Venue</span>
+                                <span class="detail-value">Seminar Hall B, Block 3</span>
+                            </div>
+                        </div>
+                        <div class="event-detail-item">
+                            <div class="detail-text">
+                                <span class="detail-label">Prize Pool</span>
+                                <span class="detail-value">₹15,000</span>
+                            </div>
+                        </div>
+                        <div class="event-detail-item">
+                            <div class="detail-text">
+                                <span class="detail-label">Team Size</span>
+                                <span class="detail-value">1 - 4 members</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="event-divider">
+                    <p class="event-desc">A 6-hour competitive coding challenge. Solve algorithmic problems across
+                        varying difficulty levels. Open to all branches.</p>
+                    <div class="seats-left">23 seats left <span>out of 100</span></div>
+                </aside>
+
+                <!-- REGISTRATION FORMS -->
+                <div>
+
+                    <!-- VIEWER FORM -->
+                    <div id="viewer-form" class="form-container">
+                        <h3>Viewer Registration</h3>
+
+                        <div class="section-sep">Personal Details</div>
+
+                        <div class="input-group" id="vg-designation">
+                            <label>Designation</label>
+                            <select id="v-designation">
+                                <option value="">Select designation</option>
+                                <option>Mr</option>
+                                <option>Miss</option>
+                                <option>Mrs</option>
+                            </select>
+                            <span class="error-msg">Please select a designation.</span>
+                        </div>
+
+                        <div class="fields-row">
+                            <div class="input-group" id="vg-firstname">
+                                <label>First Name</label>
+                                <input type="text" id="v-firstname" placeholder="John">
+                                <span class="error-msg">First name is required.</span>
+                            </div>
+                            <div class="input-group" id="vg-lastname">
+                                <label>Last Name</label>
+                                <input type="text" id="v-lastname" placeholder="Doe">
+                                <span class="error-msg">Last name is required.</span>
+                            </div>
+                        </div>
+
+                        <div class="fields-row">
+                            <div class="input-group" id="vg-roll">
+                                <label>Roll No.</label>
+                                <input type="text" id="v-roll" placeholder="e.g. 22CS045">
+                                <span class="error-msg">Roll number is required.</span>
+                            </div>
+                            <div class="input-group" id="vg-dept">
+                                <label>Department</label>
+                                <select id="v-dept">
+                                    <option value="">Select department</option>
+                                    <option>Computer Science</option>
+                                    <option>Electronics</option>
+                                    <option>Mechanical</option>
+                                    <option>Civil</option>
+                                    <option>Electrical</option>
+                                    <option>Other</option>
+                                </select>
+                                <span class="error-msg">Please select a department.</span>
+                            </div>
+                        </div>
+
+                        <div class="fields-row">
+                            <div class="input-group" id="vg-phone">
+                                <label>Phone No.</label>
+                                <input type="tel" id="v-phone" placeholder="+91 XXXXX XXXXX" maxlength="10">
+                                <span class="error-msg">Enter a valid 10-digit phone number.</span>
+                            </div>
+                            <div class="input-group" id="vg-email">
+                                <label>Email</label>
+                                <input type="email" id="v-email" placeholder="john@college.edu">
+                                <span class="error-msg">Enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group" id="vg-slot">
+                            <label>Preferred Time Slot</label>
+                            <select id="v-slot">
+                                <option value="">Select a slot</option>
+                                <option>Morning Session — 10:00 AM to 12:00 PM</option>
+                                <option>Afternoon Session — 1:00 PM to 3:00 PM</option>
+                                <option>Full Day — 10:00 AM to 4:00 PM</option>
+                            </select>
+                            <span class="error-msg">Please select a time slot.</span>
+                        </div>
+
+                        <button class="submit-btn" id="viewer-submit">Register as Viewer</button>
+                    </div>
+
+                    <!-- PARTICIPANT FORM -->
+                    <div id="participant-form" class="form-container hidden">
+                        <h3>Participant Registration</h3>
+
+                        <div class="section-sep">Personal Details</div>
+
+                        <div class="input-group" id="pg-designation">
+                            <label>Designation</label>
+                            <select id="p-designation">
+                                <option value="">Select designation</option>
+                                <option>Mr</option>
+                                <option>Miss</option>
+                                <option>Mrs</option>
+                            </select>
+                            <span class="error-msg">Please select a designation.</span>
+                        </div>
+
+                        <div class="fields-row">
+                            <div class="input-group" id="pg-firstname">
+                                <label>First Name</label>
+                                <input type="text" id="p-firstname" placeholder="John">
+                                <span class="error-msg">First name is required.</span>
+                            </div>
+                            <div class="input-group" id="pg-lastname">
+                                <label>Last Name</label>
+                                <input type="text" id="p-lastname" placeholder="Doe">
+                                <span class="error-msg">Last name is required.</span>
+                            </div>
+                        </div>
+
+                        <div class="fields-row">
+                            <div class="input-group" id="pg-dept">
+                                <label>Department</label>
+                                <select id="p-dept">
+                                    <option value="">Select department</option>
+                                    <option>Computer Science</option>
+                                    <option>Electronics</option>
+                                    <option>Mechanical</option>
+                                    <option>Civil</option>
+                                    <option>Electrical</option>
+                                    <option>Other</option>
+                                </select>
+                                <span class="error-msg">Please select a department.</span>
+                            </div>
+                            <div class="input-group" id="pg-roll">
+                                <label>Roll No.</label>
+                                <input type="text" id="p-roll" placeholder="e.g. 22CS045">
+                                <span class="error-msg">Roll number is required.</span>
+                            </div>
+                        </div>
+
+                        <div class="fields-row">
+                            <div class="input-group" id="pg-phone">
+                                <label>Phone No.</label>
+                                <input type="tel" id="p-phone" placeholder="+91 XXXXX XXXXX" maxlength="10">
+                                <span class="error-msg">Enter a valid 10-digit phone number.</span>
+                            </div>
+                            <div class="input-group" id="pg-email">
+                                <label>Email</label>
+                                <input type="email" id="p-email" placeholder="john@college.edu">
+                                <span class="error-msg">Enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="section-sep">Participation Type</div>
+                        <div class="team-toggle-row">
+                            <input type="checkbox" id="team-toggle" class="team-checkbox">
+                            <span class="team-toggle-label team-label-single">Solo</span>
+                            <label for="team-toggle" class="switch-sm">
+                                <span class="slider-sm"></span>
+                            </label>
+                            <span class="team-toggle-label team-label-team">Team</span>
+                        </div>
+
+                        <div id="team-fields" class="team-fields">
+
+                            <div class="input-group" id="tg-teamname">
+                                <label>Team Name</label>
+                                <input type="text" id="team-name" placeholder="e.g. Alpha Coders">
+                                <span class="error-msg">Team name is required.</span>
+                            </div>
+
+                            <div class="section-sep">Teammate 1 <span
+                                    style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">(required)</span>
+                            </div>
+                            <div class="teammate-block">
+                                <div class="fields-row">
+                                    <div class="input-group" id="tg1-name">
+                                        <label>Name</label>
+                                        <input type="text" id="tm1-name" placeholder="Full name">
+                                        <span class="error-msg">Teammate 1 name is required.</span>
+                                    </div>
+                                    <div class="input-group" id="tg1-roll">
+                                        <label>Roll No.</label>
+                                        <input type="text" id="tm1-roll" placeholder="e.g. 22CS046">
+                                        <span class="error-msg">Roll no. is required.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section-sep">Teammate 2 <span
+                                    style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span>
+                            </div>
+                            <div class="teammate-block">
+                                <div class="fields-row">
+                                    <div class="input-group" id="tg2-name">
+                                        <label>Name</label>
+                                        <input type="text" id="tm2-name" placeholder="Full name">
+                                        <span class="error-msg">Please also enter a roll no. for this teammate.</span>
+                                    </div>
+                                    <div class="input-group" id="tg2-roll">
+                                        <label>Roll No.</label>
+                                        <input type="text" id="tm2-roll" placeholder="e.g. 22CS047">
+                                        <span class="error-msg">Please also enter a name for this teammate.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section-sep">Teammate 3 <span
+                                    style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span>
+                            </div>
+                            <div class="teammate-block">
+                                <div class="fields-row">
+                                    <div class="input-group" id="tg3-name">
+                                        <label>Name</label>
+                                        <input type="text" id="tm3-name" placeholder="Full name">
+                                        <span class="error-msg">Please also enter a roll no. for this teammate.</span>
+                                    </div>
+                                    <div class="input-group" id="tg3-roll">
+                                        <label>Roll No.</label>
+                                        <input type="text" id="tm3-roll" placeholder="e.g. 22CS048">
+                                        <span class="error-msg">Please also enter a name for this teammate.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="submit-btn" id="participant-submit" style="margin-top:20px;">Register as
+                            Participant</button>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script>
+        // ─── Helpers ─────────────────────────────────────────────────────────────────
+
+        function setValidity(groupId, isValid) {
+            const group = document.getElementById(groupId);
+            if (!group) return;
+            isValid ? group.classList.remove('error') : group.classList.add('error');
+        }
+
+        function validateField(groupId, fieldId, rule) {
+            const el = document.getElementById(fieldId);
+            if (!el) return true;
+            const value = el.value.trim();
+            let ok = false;
+
+            if (rule === 'required') {
+                ok = value.length > 0;
+            } else if (rule === 'select') {
+                ok = value !== '';
+            } else if (rule === 'phone') {
+                ok = /^\d{10}$/.test(value.replace(/[\s\-]/g, ''));
+            } else if (rule === 'email') {
+                ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            }
+
+            setValidity(groupId, ok);
+            return ok;
+        }
+
+        function clearErrors(groupIds) {
+            groupIds.forEach(id => setValidity(id, true));
+        }
+
+
+        // ─── Role toggle (Viewer ↔ Participant) ──────────────────────────────────────
+
+        const roleToggle = document.getElementById('role-toggle');
+        const viewerForm = document.getElementById('viewer-form');
+        const participantForm = document.getElementById('participant-form');
+
+        roleToggle.addEventListener('change', function () {
+            if (this.checked) {
+                viewerForm.classList.add('hidden');
+                participantForm.classList.remove('hidden');
+            } else {
+                participantForm.classList.add('hidden');
+                viewerForm.classList.remove('hidden');
+            }
+        });
+
+
+        // ─── Team toggle (Solo ↔ Team) ────────────────────────────────────────────────
+
+        const teamToggle = document.getElementById('team-toggle');
+        const teamFields = document.getElementById('team-fields');
+        const labelSingle = document.querySelector('.team-label-single');
+        const labelTeam = document.querySelector('.team-label-team');
+
+        labelSingle.style.color = 'var(--white)';
+        labelTeam.style.color = 'var(--muted)';
+
+        teamToggle.addEventListener('change', function () {
+            if (this.checked) {
+                teamFields.classList.add('show');
+                labelSingle.style.color = 'var(--muted)';
+                labelTeam.style.color = 'var(--white)';
+            } else {
+                teamFields.classList.remove('show');
+                labelSingle.style.color = 'var(--white)';
+                labelTeam.style.color = 'var(--muted)';
+                clearErrors([
+                    'tg-teamname',
+                    'tg1-name', 'tg1-roll',
+                    'tg2-name', 'tg2-roll',
+                    'tg3-name', 'tg3-roll'
+                ]);
+            }
+        });
+
+
+        // ─── Field definitions ────────────────────────────────────────────────────────
+
+        const viewerFields = [
+            ['vg-designation', 'v-designation', 'select'],
+            ['vg-firstname', 'v-firstname', 'required'],
+            ['vg-lastname', 'v-lastname', 'required'],
+            ['vg-roll', 'v-roll', 'required'],
+            ['vg-dept', 'v-dept', 'select'],
+            ['vg-phone', 'v-phone', 'phone'],
+            ['vg-email', 'v-email', 'email'],
+            ['vg-slot', 'v-slot', 'select'],
+        ];
+
+        const participantFields = [
+            ['pg-designation', 'p-designation', 'select'],
+            ['pg-firstname', 'p-firstname', 'required'],
+            ['pg-lastname', 'p-lastname', 'required'],
+            ['pg-dept', 'p-dept', 'select'],
+            ['pg-roll', 'p-roll', 'required'],
+            ['pg-phone', 'p-phone', 'phone'],
+            ['pg-email', 'p-email', 'email'],
+        ];
+
+
+        // ─── Live validation ──────────────────────────────────────────────────────────
+
+        [...viewerFields, ...participantFields].forEach(([groupId, fieldId, rule]) => {
+            const el = document.getElementById(fieldId);
+            if (!el) return;
+            const event = el.tagName === 'SELECT' ? 'change' : 'input';
+            el.addEventListener(event, () => validateField(groupId, fieldId, rule));
+        });
+
+        // Phone: strip non-digits as user types
+        ['v-phone', 'p-phone'].forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.addEventListener('input', function () {
+                this.value = this.value.replace(/\D/g, '');
+            });
+        });
+
+
+        // ─── Viewer submit ────────────────────────────────────────────────────────────
+
+        document.getElementById('viewer-submit').addEventListener('click', function () {
+            const results = viewerFields.map(([g, f, r]) => validateField(g, f, r));
+            const allValid = results.every(Boolean);
+
+            if (allValid) {
+                alert('Viewer registration submitted successfully!');
+            } else {
+                const firstError = document.querySelector('#viewer-form .input-group.error');
+                if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+
+
+        // ─── Participant submit ───────────────────────────────────────────────────────
+
+        document.getElementById('participant-submit').addEventListener('click', function () {
+            const results = participantFields.map(([g, f, r]) => validateField(g, f, r));
+            let allValid = results.every(Boolean);
+
+            if (teamToggle.checked) {
+
+                // Team name required
+                const teamNameOk = validateField('tg-teamname', 'team-name', 'required');
+                if (!teamNameOk) allValid = false;
+
+                // Teammate 1 — name and roll both required
+                const tm1NameOk = validateField('tg1-name', 'tm1-name', 'required');
+                const tm1RollOk = validateField('tg1-roll', 'tm1-roll', 'required');
+                if (!tm1NameOk || !tm1RollOk) allValid = false;
+
+                // Teammates 2 & 3 — optional but must be filled as a pair
+                const pairs = [
+                    { nameId: 'tm2-name', rollId: 'tm2-roll', nameGroup: 'tg2-name', rollGroup: 'tg2-roll' },
+                    { nameId: 'tm3-name', rollId: 'tm3-roll', nameGroup: 'tg3-name', rollGroup: 'tg3-roll' },
+                ];
+
+                pairs.forEach(({ nameId, rollId, nameGroup, rollGroup }) => {
+                    const nameVal = document.getElementById(nameId).value.trim();
+                    const rollVal = document.getElementById(rollId).value.trim();
+
+                    if (nameVal && !rollVal) {
+                        setValidity(nameGroup, true);
+                        setValidity(rollGroup, false);
+                        allValid = false;
+                    } else if (!nameVal && rollVal) {
+                        setValidity(nameGroup, false);
+                        setValidity(rollGroup, true);
+                        allValid = false;
+                    } else {
+                        setValidity(nameGroup, true);
+                        setValidity(rollGroup, true);
+                    }
+                });
+            }
+
+            if (allValid) {
+                alert('Participant registration submitted successfully!');
+            } else {
+                const firstError = document.querySelector('#participant-form .input-group.error');
+                if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    </script>
+</body>
+
+</html>
